@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+// Here we are increasing the index value of the elements and reucing length by one.
+
 void deletion(int arr[], int n , int idx){
     if (idx < 0 || idx > n){
         cout << "Invalid";

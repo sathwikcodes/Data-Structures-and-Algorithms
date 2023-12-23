@@ -1,7 +1,15 @@
 #include<iostream>
 using namespace std;
 
-void reverse(int arr[],int low,int high){
+// The reverse function takes an array arr and two indices low and high as input. It reverses the elements in the array between the indices low and high using a two-pointer approach.
+
+// The leftRotate function takes an array arr, its size n, and an integer d representing the number of positions to rotate to the left. It performs a left rotation by calling the reverse function three times:
+
+//Reverses the first d elements.
+//Reverses the remaining elements.
+//Reverses the entire array.
+void reverse(int arr[], int low, int high)
+{
     while(low < high){
         swap(arr[low], arr[high]);
         low++;

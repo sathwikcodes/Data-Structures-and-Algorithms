@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// If the current element is non-zero, it swaps the current element with the element at the count position and increments count.
+
 void MoveZeroes(int arr[], int n)
 {
     int count = 0;

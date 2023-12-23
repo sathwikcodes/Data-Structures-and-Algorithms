@@ -2,6 +2,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// amount of water that can be trapped between the bars (represented by elements in the array)
+
+/*
+The Trappingwater function uses a brute-force approach with nested loops.
+For each element at index i, it calculates the maximum height to the left (lmax) and the maximum height to the right (rmax).
+The amount of water that can be trapped at that position is determined by min(lmax, rmax) - arr[i].
+The total trapped water is accumulated in the result variable.
+*/
 int Trappingwater(int arr[], int n ){
     int result = 0;
     for (int i = 1; i < n - 1; i++){
@@ -17,6 +25,13 @@ int Trappingwater(int arr[], int n ){
     }
     return result;
 }
+
+/*
+The TrappingwaterEfficient function uses an efficient dynamic programming approach.
+It precomputes the left maximum height (lmax) and the right maximum height (rmax) for each element in separate arrays.
+The trapped water at each position is calculated using the precomputed lmax and rmax arrays.
+The total trapped water is accumulated in the result variable.
+*/
 
 int TrappingwaterEfficient(int arr[], int n){
     int result = 0;

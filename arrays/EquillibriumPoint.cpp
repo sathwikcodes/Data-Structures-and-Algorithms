@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+//  An equilibrium point is an index such that the sum of elements on its left is equal to the sum of elements on its right.
+
 bool Epoint(int arr[], int n){
     for (int i = 0; i < n; i++){
         int lsum = 0;
@@ -17,7 +19,7 @@ bool Epoint(int arr[], int n){
     }
     return false;
 }
-
+// Here It first calculates the total sum of the array elements in the variable res. Then, it iterates through the array, updating the sum of the right side (res) and the sum of the left side (leftsum).
 bool EpointEfficient(int arr[], int n){
     int res = 0;
     for (int i = 0; i < n; i++){

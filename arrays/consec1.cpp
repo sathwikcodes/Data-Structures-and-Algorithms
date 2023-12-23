@@ -16,6 +16,8 @@ int consecutive(int arr[], int n){
         return count;
     }
 
+    // Here we check number of consecutive 1's appearing in given array.
+
 int consectutiveEfficient(int arr[], int n){
         int res = 0;
         int curr = 0;

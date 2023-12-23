@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+// Maximum sum that can be aquired in an array.
+
 int maxCircularSum(int arr[], int n){
     int res = arr[0];
     for (int i = 0; i < n; i++){

@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// If the current element arr[i] is different from the previous unique element (arr[res - 1]), it is considered a new unique element, and it is placed at the position res. The res pointer is then incremented.
+
 int removeDuplicates(int arr[], int n)
 {
     int res = 1;

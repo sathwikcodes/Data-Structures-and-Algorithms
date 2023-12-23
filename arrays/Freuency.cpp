@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Here we are printing the frequency of the elements in the array. Frequency means number of times a element occured.
+// It first calculates the total sum of the array elements in the variable res. Then, it iterates through the array, updating the sum of the right side (res) and the sum of the left side (leftsum).
 void printFreq(int arr[], int n)
 {
     int freq = 1;

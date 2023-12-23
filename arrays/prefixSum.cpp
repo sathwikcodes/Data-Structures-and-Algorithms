@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+
+//getting sum of elements from given indices.
 int getSum(int arr[],int n,int start, int end){
     int sum = 0;
     for (int i = start; i <= end; i++){

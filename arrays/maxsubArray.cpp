@@ -14,6 +14,13 @@ int MaximumsubArray(int arr[], int n){
     return res;
 }
 
+/*The function MaximumsubArrayEfficient is an optimized version using Kadane's algorithm.
+It takes an array arr and its size n as parameters.
+It initializes res and maxEnding with the first element of the array.
+It uses a single loop to iterate over the array.
+The variable maxEnding represents the maximum subarray sum ending at the current index.
+It updates maxEnding by taking the maximum of the sum of the current element and the previous maxEnding or just the current element.
+The result res is updated with the maximum subarray sum encountered.*/
 
 int MaximumsubArrayEfficient(int arr[], int n){
     int res = arr[0];
