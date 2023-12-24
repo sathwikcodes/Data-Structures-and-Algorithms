@@ -15,6 +15,8 @@ int IndexofFirstNaive(int arr[], int n, int x)
 
 // efficient recursive solution
 
+// uses Binary search algorithm - find mid point if greater than required element go to left if else go to right and if it is equal with the mid element then check the prev element and return the first occurence of it.
+
 int FirstOccurencerecursive(int arr[], int low, int high, int x)
 {
     if (low > high)
@@ -62,6 +64,10 @@ int main()
     int arr[] = {15, 15, 15};
     int n = sizeof(arr) / sizeof(arr[0]);
     int x = 15;
-    cout << IndexofFirstNaive(arr, n, x);
+
+    cout << IndexofFirstNaive(arr, n, x) << endl;
+    cout << FirstOccurencerecursive(arr, 0, n - 1, x) << endl;
+    cout << FirstOccurenceIterative(arr, n, x) << endl;
+
     return 0;
 }

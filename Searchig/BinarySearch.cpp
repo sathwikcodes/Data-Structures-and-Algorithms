@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+// Only works for sorted arrays.
+
 int BinarySearch(int arr[], int n, int x){
     int low = 0;
     int high = n - 1;
@@ -10,7 +12,7 @@ int BinarySearch(int arr[], int n, int x){
             return mid;
         }else if( arr[mid] < x){
             low = mid + 1;
-        }else if(arr[mid] > 1){
+        }else if(arr[mid] > x){
             high = mid - 1;
         }
     }

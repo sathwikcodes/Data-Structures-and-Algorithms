@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// recursive approach
+
 int BinarySearchR(int arr[], int low, int high, int x, int n)
 {
     if (low > high)
