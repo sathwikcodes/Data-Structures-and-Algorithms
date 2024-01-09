@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//we are assuming the first element as largest and if next element in larger then uupdate the largest var value.
+//we are assuming the first element as largest and if next element in larger then update the largest var value.
 
 int LargestNum(int arr[], int n)
 {

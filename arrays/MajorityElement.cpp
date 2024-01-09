@@ -23,34 +23,34 @@ int MajorityElement(int arr[],int n){
 // Boyer-Moore Voting Algorithm. It iterates through the array once to find a potential candidate for the majority element. In the second pass, it verifies if the candidate is the majority element by counting its occurrences. If it is, it returns the majority element
 int MajorityElementEfficient(int arr[], int n)
 {
-    int res = 0;
+    int candidate = arr[0];
     int count = 1;
 
     for (int i = 1; i < n; i++)
     {
-        if (arr[res] == arr[i])
+        if (arr[i] == candidate)
             count++;
         else
             count--;
+
         if (count == 0)
         {
-            res = i;
+            candidate = arr[i];
             count = 1;
         }
     }
-
 
     // Verify if the found element is the majority element
     count = 0;
     for (int i = 0; i < n; i++)
     {
-        if (arr[res] == arr[i])
+        if (arr[i] == candidate)
             count++;
     }
 
     if (count > n / 2)
     {
-        return arr[res];
+        return candidate;
     }
     else
     {
@@ -58,8 +58,9 @@ int MajorityElementEfficient(int arr[], int n)
     }
 }
 
-int main(){
-    int arr[] = {1, 4, 3, 4, 4, 4};
+int main()
+{
+    int arr[] = {2,2,1,1,1,2,2};
     int n = sizeof(arr) / sizeof(arr[0]);
     cout << MajorityElementEfficient(arr, n);
     return 0;
