@@ -112,10 +112,12 @@ Node *removeK(Node *head, int k)
     return head;
 }
 
-Node* removeElement(Node* head, int el){
-    if(head == NULL)
+Node *removeElement(Node *head, int el)
+{
+    if (head == NULL)
         return head;
-    if(head->data == el){
+    if (head->data == el)
+    {
         Node *temp = head;
         head = head->next;
         free(temp);
@@ -123,14 +125,100 @@ Node* removeElement(Node* head, int el){
     }
     Node *temp = head;
     Node *prev = NULL;
-    while(temp != NULL){
-        if(temp->data == el){
+    while (temp != NULL)
+    {
+        if (temp->data == el)
+        {
             prev->next = prev->next->next;
             free(temp);
             break;
         }
         prev = temp;
         temp = temp->next;
+    }
+    return head;
+}
+
+Node *insertHead(Node *head, int val)
+{
+    Node *temp = new Node(val, head);
+    return head;
+}
+
+Node *insertTail(Node *head, int val)
+{
+    if (head == NULL)
+    {
+        return new Node(val);
+    }
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    Node *newNode = new Node(val);
+    temp->next = newNode;
+    return head;
+}
+
+Node *insertPosition(Node *head, int el, int k)
+{
+    if (head == NULL)
+    {
+        if (k == 1)
+        {
+            return new Node(el);
+        }
+        else
+        {
+            return head;
+        }
+    }
+    if (k == 1)
+    {
+        return new Node(el, head);
+    }
+    int cnt = 0;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        cnt++;
+        if (cnt == (k - 1))
+        {
+            Node *x = new Node(el, tmep->next);
+            temp - next = x;
+            break;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
+
+Node *insertBeforeValue(Node *head, int el, int val)
+{
+    if (head == NULL)
+    {
+        return NULL;
+    }
+    if (head->data == val)
+    {
+        return new Node(el, head);
+    }
+    Node *temp = head;
+    bool found = false;
+    while (temp->next != NULL)
+    {
+        if (temp->next->data == val)
+        {
+            Node *x = new Node(el, temp->next);
+            temp->next = x;
+            found = 1;
+            break;
+        }
+        temp = temp->next;
+    }
+    if (found == false)
+    {
     }
     return head;
 }
