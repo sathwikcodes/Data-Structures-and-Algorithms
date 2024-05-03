@@ -118,26 +118,40 @@ Node *removeKthElement(Node *head, int k)
     return head;
 }
 
-// Function to insert a new node with value 'k' at the end of the doubly linked list
+Node *ReverseDLL(Node *head)
+{
+    Node *current = head;
+    Node *prev = nullptr;
+    Node *next = nullptr;
+    while (current != nullptr)
+    {
+        next = current->next; // Save the next node
+        current->next = prev; // Reverse the pointer
+        current->back = next; // Update the backward pointer (for consistency)
+        prev = current;       // Move pointers one position ahead
+        current = next;
+    }
+    return prev;
+}
+
 Node *insertAtTail(Node *head, int k)
 {
-    // Create a new node with data 'k'
+
     Node *newNode = new Node(k);
 
-    // If the doubly linked list is empty, set 'head' to the new node
+
     if (head == nullptr)
     {
         return newNode;
     }
 
-    // Traverse to the end of the doubly linked list
+
     Node *tail = head;
     while (tail->next != nullptr)
     {
         tail = tail->next;
     }
 
-    // Connect the new node to the last node in the list
     tail->next = newNode;
     newNode->back = tail;
 
